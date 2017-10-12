@@ -307,6 +307,12 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox-features-sync-bundle.css',
     },
+    'firefox-hub-quantum': {
+        'source_filenames': (
+            'css/firefox/hub/home-quantum.scss',
+        ),
+        'output_filename': 'css/firefox-hub-quantum-bundle.css',
+    },
     'firefox-interest-dashboard': {
         'source_filenames': (
             'css/firefox/family-nav.less',
@@ -1288,6 +1294,16 @@ PIPELINE_JS = {
             'js/firefox/dev-whatsnew.js',
         ),
         'output_filename': 'js/firefox_developer_whatsnew-bundle.js',
+    },
+    'firefox-hub-quantum': {
+        'source_filenames': (
+            'js/libs/jquery.waypoints.min.js',
+            'js/libs/jquery.waypoints-sticky.min.js',
+            'js/hubs/sub-nav.js',
+            'js/base/mozilla-smoothscroll.js',
+            'js/firefox/hub-quantum.js',
+        ),
+        'output_filename': 'js/firefox-hub-quantum-bundle.js',
     },
     'firefox_new_scene1': {
         'source_filenames': (

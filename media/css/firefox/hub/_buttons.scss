@@ -1,0 +1,44 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import '../../pebbles/includes/lib';
+
+$color-quantum-bright-green: #16da00;
+$color-quantum-bright-green-hover: lighten($color: $color-quantum-bright-green, $amount: 2%);
+
+.button,
+button.button,
+button.form-button,
+a.button:link,
+a.button:visited {
+    &.quantum {
+        @include font-size-level6;
+        @include transition(background-color .1s ease-in-out);
+        background-color: $color-quantum-bright-green;
+        border: 2px solid $color-quantum-bright-green;
+        padding: .9em 40px;
+
+        .download-title {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $color-quantum-bright-green-hover;
+            border: 2px solid $color-quantum-bright-green-hover;
+        }
+    }
+}
+
+.fx-privacy-link a {
+    @include font-size-extra-small;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: underline;
+    }
+}

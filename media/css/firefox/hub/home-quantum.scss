@@ -1,0 +1,1198 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import '../../pebbles/includes/lib';
+@import '../../hubs/sections';
+@import '../../hubs/masthead';
+@import '../../hubs/sub-nav';
+@import 'buttons';
+
+/* -------------------------------------------------------------------------- */
+// Common elements & variables
+
+body {
+    @include open-sans;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+.page-section {
+    padding: 40px 0;
+    text-align: center;
+
+    h2 {
+        @include font-size-level3;
+        line-height: 1.5;
+
+        &.section-title {
+            padding-top: 40px;
+            position: relative;
+
+            &:before {
+                background: #000;
+                border-radius: 5px;
+                content: '';
+                height: 5px;
+                left: 50%;
+                margin-left: -32px;
+                position: absolute;
+                top: 0;
+                width: 64px;
+            }
+        }
+    }
+
+    h3 {
+        @include font-size-level4;
+    }
+
+    p {
+        line-height: 1.8;
+    }
+
+    @media #{$mq-desktop} {
+        padding: 80px 0;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// Main page header
+
+.main-header-section {
+
+    h1 {
+        @include at2x('/media/img/logos/firefox/logo-quantum-full-wordmark.png', 280px, 59px);
+        @include image-replaced();
+        height: 59px;
+        margin: 0 auto 10px;
+        width: 280px;
+    }
+
+    h2 {
+        @include font-size-level3;
+        margin-top: 20px;
+    }
+
+    .download-button {
+        margin-top: 40px;
+    }
+
+    .fx-privacy-link a {
+        color: #000;
+    }
+
+    @media #{$mq-tablet} {
+        h1 {
+            @include background-size(425px 90px);
+            height: 90px;
+            width: 425px;
+        }
+    }
+
+    @media #{$mq-desktop} {
+        min-height: 550px;
+        text-align: left;
+
+        h1 {
+            margin: 0 0 10px;
+        }
+
+        .header-content {
+            float: left;
+            padding: 60px 0;
+            width: 50%;
+        }
+
+        .header-image {
+            margin-bottom: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+
+            img {
+                display: block;
+                height: auto;
+                max-width: none;
+                width: 903px;
+            }
+        }
+    }
+
+    @media #{$mq-desktop-wide} {
+
+        .header-content {
+            width: 40%;
+        }
+
+        .header-image {
+            width: 60%;
+        }
+    }
+}
+
+html[dir="rtl"] .main-header-section {
+
+    @media #{$mq-desktop} {
+
+        .header-content {
+            float: right;
+            text-align: right;
+        }
+
+        .header-image {
+            left: 0;
+            right: auto;
+        }
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// What's new section
+
+.whats-new-section {
+    background: #ff1ad9;
+    background: linear-gradient(to right, #ff1ad9 0%, #ff9400 100%);
+    color: #fff;
+
+    h2.section-title {
+        margin: 0 auto 40px;
+        max-width: 24em;
+
+        &:before {
+            background: #fff;
+        }
+    }
+
+    ul li {
+        font-weight: bold;
+        margin: 0 auto 40px;
+        max-width: 24em;
+    }
+
+    .quote {
+        font-style: italic;
+        margin: 0 auto 40px;
+        max-width: 24em;
+
+        a:link,
+        a:visited {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        a:hover,
+        a:active,
+        a:focus {
+            text-decoration: none;
+        }
+    }
+
+    @media #{$mq-tablet} {
+        background: url('/media/img/firefox/hub/quantum/whats-new-tail.png') top -300px center no-repeat,
+                    linear-gradient(to right, #ff1ad9 0%, #ff9400 100%);
+    }
+
+    @media #{$mq-desktop} {
+        text-align: left;
+
+        h2.section-title {
+            margin: 0 0 40px;
+
+            &:before {
+                left: 0;
+                margin-left: 0;
+            }
+        }
+
+        ul li,
+        .quote {
+            margin: 0 0 40px;
+        }
+
+        .whats-new-content {
+            float: left;
+            width: 40%;
+        }
+
+        .whats-new-image {
+            margin-bottom: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 55%;
+
+            img {
+                display: block;
+                height: auto;
+                max-width: none;
+                width: 903px;
+            }
+        }
+    }
+
+    @media #{$mq-desktop-wide} {
+        .whats-new-content {
+            width: 25%;
+        }
+
+        .whats-new-image {
+            width: 70%;
+        }
+    }
+}
+
+html[dir="rtl"] .whats-new-section {
+
+    @media #{$mq-desktop} {
+        text-align: right;
+
+        h2.section-title:before {
+            left: auto;
+            right: 0;
+        }
+
+        .whats-new-content {
+            float: right;
+        }
+
+        .whats-new-image {
+            left: 0;
+            right: auto;
+        }
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// Key features section
+
+.key-features-section {
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin: 0 auto 40px;
+        max-width: 24em;
+    }
+
+    a:link,
+    a:visited {
+        color: #000;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+        text-decoration: none;
+    }
+
+    .key-feature {
+        margin: 40px 0;
+
+        .content {
+            padding: 0;
+        }
+
+        .key-feature-container {
+            background-color: #10fcb2;
+            background-image: linear-gradient(to right, #00feff 0%, #10fcb2 67%, #24f954 100%);
+            padding: 40px 20px;
+        }
+    }
+
+    .key-feature-media {
+
+        &.video {
+            box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, .2);
+            margin: 0 auto;
+            max-width: 645px;
+
+            .video-container {
+                height: 0;
+                overflow: hidden;
+                padding-bottom: 56.25%;
+                position: relative;
+            }
+
+            iframe {
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top:0;
+                width: 100%;
+            }
+        }
+
+        &.image  img {
+            box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, .2);
+        }
+    }
+
+    @media #{$mq-desktop} {
+        text-align: left;
+
+        h2.section-title:before {
+            left: 0;
+            margin-left: 0;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+
+        .key-feature {
+            margin: 140px 0;
+
+            .content {
+                padding: 0 85px;
+            }
+
+            .key-feature-container {
+                @include clearfix;
+                padding: 60px;
+            }
+
+            .key-feature-content {
+                width: 38%;
+            }
+
+            .key-feature-media {
+                width: 55%;
+            }
+
+            &:nth-child(odd) {
+                background-image: linear-gradient(to right, transparent 0%, transparent 50%, #24f954 50%, #24f954 100%);
+
+                .key-feature-container {
+                    background-image: linear-gradient(to right, #00feff 0%, #10fcb2 67%, #24f954 100%);
+                }
+
+                .key-feature-content {
+                    float: left;
+                }
+
+                .key-feature-media {
+                    float: right;
+                }
+            }
+
+            &:nth-child(even) {
+                background-image: linear-gradient(to left, transparent 0%, transparent 50%, #24f954 50%, #24f954 100%);
+
+                .key-feature-container {
+                    background-image: linear-gradient(to left, #00feff 0%, #10fcb2 67%, #24f954 100%);
+                }
+
+                .key-feature-content {
+                    float: right;
+                }
+
+                .key-feature-media {
+                    float: left;
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @media #{$mq-desktop-wide} {
+
+        .key-feature {
+            margin: 140px 0 240px;
+
+            .key-feature-media {
+                height: 400px;
+                margin: -100px 0;
+                width: 645px;
+
+                &.video {
+                    background: #000;
+                }
+            }
+        }
+    }
+}
+
+html[dir="rtl"] .key-features-section {
+
+    @media #{$mq-desktop} {
+        text-align: right;
+
+        h2.section-title:before {
+            left: auto;
+            right: 0;
+        }
+
+        .key-feature {
+
+            &:nth-child(odd) {
+
+                .key-feature-content {
+                    float: right;
+                }
+
+                .key-feature-media {
+                    float: left;
+                }
+            }
+
+            &:nth-child(even) {
+
+                .key-feature-content {
+                    float: left;
+                }
+
+                .key-feature-media {
+                    float: right;
+                }
+            }
+        }
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// Data import section
+
+.data-import-section {
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        @include font-size-level4;
+    }
+
+    ul {
+        margin-bottom: 0;
+
+        li {
+            @include font-size-level4;
+            font-weight: bold;
+            margin: 40px 0;
+            padding-top: 120px;
+            position: relative;
+            z-index: 1;
+
+            &:before {
+                background-color: #0080ff;
+                border-radius: 100%;
+                content: '';
+                height: 100px;
+                left: 50%;
+                margin-left: -50px;
+                position: absolute;
+                top: 0;
+                width: 100px;
+                z-index: 1;
+            }
+
+            &.bookmarks:before {
+                background: #0080ff url('/media/img/firefox/hub/quantum/icon-bookmarks.svg') center center no-repeat;
+                background: url('/media/img/firefox/hub/quantum/icon-bookmarks.svg') center center no-repeat,
+                            linear-gradient(to bottom, #0080ff 0%, #00feff 100%);
+            }
+
+            &.auto-fill:before {
+                background: #0080ff url('/media/img/firefox/hub/quantum/icon-auto-fill.svg') center center no-repeat;
+                background: url('/media/img/firefox/hub/quantum/icon-auto-fill.svg') center center no-repeat,
+                            linear-gradient(to bottom, #0080ff 0%, #00feff 100%);
+            }
+
+            &.passwords:before {
+                background: #0080ff url('/media/img/firefox/hub/quantum/icon-passwords.svg') center center no-repeat;
+                background: url('/media/img/firefox/hub/quantum/icon-passwords.svg') center center no-repeat,
+                            linear-gradient(to bottom, #0080ff 0%, #00feff 100%);
+            }
+
+            &.history:before {
+                background: url('/media/img/firefox/hub/quantum/icon-history.svg') center center no-repeat;
+                background: url('/media/img/firefox/hub/quantum/icon-history.svg') center center no-repeat,
+                            linear-gradient(to bottom, #0080ff 0%, #00feff 100%);
+            }
+        }
+    }
+
+    @media #{$mq-tablet} {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                margin: 40px auto;
+                width: 25%;
+            }
+        }
+    }
+
+    @media #{$mq-desktop} {
+        ul {
+            li {
+                padding-top: 145px;
+
+                &:before {
+                    height: 125px;
+                    margin-left: -62.5px;
+                    width: 125px;
+                }
+            }
+        }
+    }
+}
+
+html[dir="rtl"] .data-import-section {
+
+    @media #{$mq-desktop-wide} {
+
+        ul {
+
+            li:after {
+                left: auto;
+                right: 50%;
+            }
+
+            &:after {
+                left: 0;
+                right: auto;
+            }
+        }
+    }
+}
+
+@supports (display: grid) {
+
+    .data-import-section {
+
+        @media #{$mq-desktop} {
+            ul {
+                display: grid;
+                grid-gap: 40px;
+                grid-template-columns: repeat(4, 1fr);
+
+                li {
+                    margin: 40px 0;
+                    width: auto;
+                }
+            }
+        }
+
+        @media #{$mq-desktop-wide} {
+
+            ul {
+                grid-template-columns: repeat(5, 1fr);
+                position: relative;
+
+                li:after {
+                    background: linear-gradient(to bottom, #00bdff 0%, #00bdff 100%);
+                    content: '';
+                    height: 6px;
+                    left: 50%;
+                    position: absolute;
+                    top: 60px;
+                    width: 100%;
+                    z-index: 0;
+                }
+
+                &:after {
+                    background: url('/media/img/firefox/hub/quantum/data-truck.svg') center right no-repeat;
+                    content: '';
+                    height: 107px;
+                    position: absolute;
+                    right: 0;
+                    top: 55px;
+                    width: 180px;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+
+    html[dir="rtl"] .data-import-section {
+
+        @media #{$mq-desktop-wide} {
+
+            ul:after {
+                background-image: url('/media/img/firefox/hub/quantum/data-truck-rtl.svg');
+            }
+        }
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// privacy section
+
+.privacy-section {
+    background-color: #c42482;
+    background-image: linear-gradient(222deg, #ff272d 0%, #c42482 33%, #ab217f 47%, #671878 84%, #4a1475 100%);
+    color: #fff;
+
+    h2 {
+        margin-bottom: 20px;
+
+        &.section-title:before {
+            background: #fff;
+        }
+    }
+
+    h3 {
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    header {
+        margin-bottom: 60px;
+    }
+
+    .tagline {
+        @include font-size-level4;
+        margin-bottom: 40px;
+    }
+
+    ul li {
+        background-position: top center;
+        background-repeat: no-repeat;
+        border-bottom: 1px solid #fff;
+        margin: 0 auto 40px;
+        max-width: 24em;
+        padding: 60px 0 20px;
+
+        &.private-browsing {
+            background-image: url('/media/img/firefox/hub/quantum/icon-private-browsing.svg');
+        }
+
+        &.tracking-protection {
+            background-image: url('/media/img/firefox/hub/quantum/icon-tracking-protection.svg');
+        }
+
+        &.faster-loading {
+            background-image: url('/media/img/firefox/hub/quantum/icon-rocket.svg');
+        }
+
+    }
+
+    a:link,
+    a:visited {
+        color: #fff;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    a:hover,
+    a:active,
+    a:focus {
+        text-decoration: none;
+    }
+
+    img {
+        box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, .1);
+        margin-bottom: 20px;
+    }
+
+    @media #{$mq-desktop} {
+        margin-bottom: 200px;
+        position: relative;
+        text-align: left;
+
+        h2.section-title:before {
+            left: 0;
+            margin-left: 0;
+        }
+
+        ul {
+            float: left;
+            width: 45%;
+
+            li {
+                background-position: top left;
+                margin: 0 0 40px;
+                max-width: none;
+                padding: 0 0 20px 60px;
+            }
+        }
+
+        .privacy-section-media {
+            float: right;
+            width: 50%;
+        }
+    }
+
+    @media #{$mq-desktop-wide} {
+        .privacy-section-media img {
+            margin: 0 0 40px 60px;
+
+            &:nth-child(2) {
+                margin-left: 120px;
+            }
+        }
+    }
+}
+
+html[dir="rtl"] .privacy-section {
+
+    @media #{$mq-desktop} {
+        text-align: right;
+
+        h2.section-title:before {
+            left: auto;
+            right: 0;
+        }
+
+        ul {
+            float: right;
+
+            li {
+                background-position: top right;
+                padding: 0 60px 20px 0;
+            }
+        }
+
+        .privacy-section-media {
+            float: left;
+        }
+    }
+
+    @media #{$mq-desktop-wide} {
+        .privacy-section-media img {
+            margin: 0 60px 40px 0;
+
+            &:nth-child(2) {
+                margin-left: 0;
+                margin-right: 120px;
+            }
+        }
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// Feature videos section
+
+.feature-videos-header {
+    color: #fff;
+    background-color: #ff1ad9;
+    background-image: linear-gradient(143deg, #ff1ad9 0%, #ff24c7 8%, #ff30b2 18%, #ff9400 100%);
+
+    .feature-videos-header-container {
+        padding: 40px 0;
+    }
+
+    h2.section-title:before {
+        background: #fff;
+    }
+
+    ul {
+        margin: 20px 0 0;
+
+        li {
+
+            a:link,
+            a:visited {
+                @include font-size-level4;
+                color: #000;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            a.current:link,
+            a.current:visited,
+            a.current:hover,
+            a.current:active,
+            a.current:focus {
+                color: #fff;
+                font-weight: bold;
+                text-decoration: none;
+                cursor: default;
+            }
+        }
+    }
+
+    .previous,
+    .next {
+        display: none;
+    }
+
+    @media #{$mq-desktop} {
+        background: transparent;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        text-align: left;
+        top: 0;
+        width: 35%;
+        z-index: 100;
+
+        .feature-videos-header-container {
+            left: 0;
+            padding: 100px 40px 60px 0;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+        }
+
+        h2.section-title:before {
+            left: 0;
+            margin-left: 0;
+        }
+
+        ul {
+            margin: 40px 0 40px;
+        }
+
+        .previous,
+        .next {
+            @include image-replaced;
+            border: none;
+            cursor: pointer;
+            display: block;
+            height: 28px;
+            margin-bottom: 20px;
+            text-align: left;
+            text-indent: 200%;
+            width: 26px;
+        }
+
+        .previous {
+            background: transparent url('/media/img/firefox/hub/quantum/icon-arrow-up.svg') top left no-repeat;
+        }
+
+        .next {
+            background: transparent url('/media/img/firefox/hub/quantum/icon-arrow-down.svg') top left no-repeat;
+        }
+    }
+
+    @media #{$mq-desktop-wide} {
+
+        ul {
+            border-left: 5px solid #fff;
+            margin: 40px 0 40px 10px;
+
+            li {
+                padding: 10px 60px;
+            }
+        }
+    }
+}
+
+.feature-videos-section {
+    background-color: #f9f9fa;
+    padding: 0;
+    position: relative;
+
+    .content {
+        padding: 0;
+    }
+
+    .feature-videos-container {
+        position: relative;
+    }
+
+    @media #{$mq-desktop} {
+        text-align: left;
+
+        &:before {
+            background-color: #ff1ad9;
+            background-image: linear-gradient(143deg, #ff1ad9 0%, #ff24c7 8%, #ff30b2 18%, #ff9400 100%);
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 50%;
+        }
+
+        .content {
+            padding: 0 85px;
+        }
+
+        .feature-videos-content {
+            padding-left: 35%;
+        }
+    }
+}
+
+.feature-video {
+    background-color: #f9f9fa;
+    padding-top: 60px;
+
+    figure > img,
+    figure > video {
+        box-shadow: 2px 3px 8px 0 rgba(0, 0, 0, .2);
+    }
+
+    h2 {
+        margin: 40px 0 20px;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    @media #{$mq-desktop} {
+        padding: 160px 0 0 10%;
+    }
+
+    &:last-child {
+        padding-bottom: 60px;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// Customization section
+
+.customization-section {
+
+    h2 {
+        margin-bottom: 40px;
+    }
+
+    h3 {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    ul li {
+        margin: 40px 0;
+        padding-top: 120px;
+        position: relative;
+
+        &:before {
+            background-color: #ffe900;
+            border-radius: 100%;
+            content: '';
+            height: 100px;
+            left: 50%;
+            margin-left: -50px;
+            position: absolute;
+            top: 0;
+            width: 100px;
+        }
+
+        &.extensions:before {
+            background: #ffe900 url('/media/img/firefox/hub/quantum/icon-extensions.svg') center center no-repeat;
+            background: url('/media/img/firefox/hub/quantum/icon-extensions.svg') center center no-repeat,
+                        linear-gradient(to bottom, #ffe900 0%, #ff9400 100%);
+        }
+
+        &.themes:before {
+            background: #ffe900 url('/media/img/firefox/hub/quantum/icon-themes.svg') center center no-repeat;
+            background: url('/media/img/firefox/hub/quantum/icon-themes.svg') center center no-repeat,
+                        linear-gradient(to bottom, #ffe900 0%, #ff9400 100%);
+        }
+
+        &.toolbar:before {
+            background: #ffe900 url('/media/img/firefox/hub/quantum/icon-toolbar.svg') center center no-repeat;
+            background: url('/media/img/firefox/hub/quantum/icon-toolbar.svg') center center no-repeat,
+                        linear-gradient(to bottom, #ffe900 0%, #ff9400 100%);
+        }
+    }
+
+    @media #{$mq-tablet} {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                margin: 40px auto;
+                padding-top: 160px;
+                width: 30%;
+            }
+        }
+    }
+}
+
+@supports (display: grid) {
+
+    .customization-section {
+
+        @media #{$mq-desktop} {
+            ul {
+                display: grid;
+                grid-gap: 40px;
+                grid-template-columns: repeat(3, 1fr);
+
+                li {
+                    margin: 40px 0;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// Sync section
+
+.sync-section {
+    background: #ededf0;
+    padding-bottom: 0;
+
+    h2 {
+        margin-bottom: 40px;
+    }
+
+    @media #{$mq-desktop} {
+        position: relative;
+
+        h2.section-title:before {
+            left: 0;
+            margin-left: 0;
+        }
+
+        .sync-section-content {
+            float: right;
+            text-align: left;
+            width: 50%;
+        }
+
+
+        .sync-section-image {
+            float: left;
+            width: 50%;
+
+            img {
+                height: 571px;
+                margin: -140px 0 -140px -420px;
+                max-width: none;
+                width: 788px;
+            }
+        }
+    }
+
+    @media #{$mq-desktop-wide} {
+        .sync-section-image img {
+            margin-left:  -300px;
+        }
+    }
+}
+
+html[dir="rtl"] .sync-section {
+
+    @media #{$mq-desktop} {
+
+        h2.section-title:before {
+            left: auto;
+            right: 0;
+        }
+
+        .sync-section-content {
+            text-align: right;
+        }
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// Browser for good section
+
+.browse-for-good-section {
+    padding-bottom: 130px;
+
+    .browse-for-good-section-container {
+        @include at2x('/media/img/firefox/hub/quantum/mozilla.png', 300px, 261px);
+        background-position: top center;
+        background-repeat: no-repeat;
+        padding-top: 280px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin: 0 auto;
+        max-width: 24em;
+    }
+
+    @media #{$mq-tablet} {
+
+        .browse-for-good-section-container {
+            @include background-size(350px 305px);
+            @include clearfix;
+            background-position: top left;
+            min-height: 305px;
+            padding-top: 40px;
+        }
+
+        .browse-for-good-section-content {
+            float: right;
+            text-align: right;
+            width: 45%;
+
+            h2.section-title:before {
+                left: auto;
+                margin-left: 0;
+                right: 0;
+            }
+
+            p {
+                margin: 0;
+                max-width: none;
+            }
+        }
+    }
+
+    @media #{$mq-desktop} {
+        padding: 200px 0 0;
+
+        .browse-for-good-section-container {
+            @include background-size(450px 392px);
+            min-height: 392px;
+            padding-top: 100px;
+        }
+    }
+
+    @media #{$mq-desktop-wide} {
+        .browse-for-good-section-container {
+            @include background-size(541px 471px);
+            background-position: top left 20px;
+            min-height: 471px;
+        }
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+// Secondary download section
+
+.secondary-download-section {
+    background-color: #0060df;
+    background-image: linear-gradient(to bottom, #0060df 0%, #009cff 50%, #00abff 100%);
+    color: #fff;
+    position: relative;
+
+    &:before {
+        background: transparent url('/media/img/firefox/hub/quantum/wave.svg') top center no-repeat;
+        @include background-size(5230px 270px);
+        content: '';
+        display: block;
+        height: 270px;
+        left: 0;
+        position: absolute;
+        top: -5px;
+        width: 100%;
+    }
+
+    .content {
+        margin-top: -130px;
+    }
+
+    h2 {
+        @include at2x('/media/img/logos/firefox/logo-quantum.png', 200px, 200px);
+        @include font-size-level2;
+        background-position: top center;
+        background-repeat: no-repeat;
+        padding-top: 220px;
+    }
+}
